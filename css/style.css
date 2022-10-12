@@ -1,0 +1,53 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 1fr 25%;
+    grid-template-rows: 10em 1fr 5em;
+    grid-template-areas: "header header"
+                         "section section"
+                         "footer footer";
+    margin: 0;
+    gap: 10px;
+    padding: 10px;
+}
+
+.header {
+    grid-area: header;
+    
+    border: 2px solid red;
+}
+
+.section {
+    grid-area: section;
+
+    display: grid;
+    grid-template-columns: 1fr 25%;
+    grid-template-areas: "article aside";
+    gap: 10px;
+}
+
+    .section__article {
+        grid-area: article;
+
+        border: 2px solid red;
+    }
+    
+    .section__aside {
+        grid-area: aside;
+
+        border: 2px solid red;
+    }
+    
+.footer {
+        grid-area: footer;
+
+        border: 2px solid red;
+}
