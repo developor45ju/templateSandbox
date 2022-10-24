@@ -7,6 +7,43 @@ html, body {
     width: 100%;
 }
 
+.loading-page {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    height: 250px;
+    width: 250px;
+    border: 3px solid black;
+    border-top-color: aqua;
+    border-right-color: red;
+    border-bottom-color: blue;
+    border-left-color: plum;
+    border-radius: 100%;
+    animation: spin 3s ease  forwards;
+}
+
+.loading-page ~ * {
+    opacity: 0;
+    animation: appear 3s 1s ease-in forwards;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(1turn);
+        opacity: 0;
+    }
+}
+
+@keyframes appear {
+    to {
+        opacity: 1;
+    }
+}
+
 body {
     display: grid;
     grid-template-columns: 1fr 25%;
@@ -17,37 +54,45 @@ body {
     margin: 0;
     gap: 10px;
     padding: 10px;
+    animation: scroll-after__loading-page ease 3s 1s forwards;
+    overflow-y: hidden;
 }
 
-.header {
-    grid-area: header;
-    
-    border: 2px solid red;
-}
+    @keyframes scroll-after__loading-page {
+        to {
+            overflow-y: scroll;
+        }
+    }
 
-.section {
-    grid-area: section;
-
-    display: grid;
-    grid-template-columns: 1fr 25%;
-    grid-template-areas: "article aside";
-    gap: 10px;
-}
-
-    .section__article {
-        grid-area: article;
-
+    .header {
+        grid-area: header;
+        
         border: 2px solid red;
     }
-    
-    .section__aside {
-        grid-area: aside;
 
-        border: 2px solid red;
+    .section {
+        grid-area: section;
+
+        display: grid;
+        grid-template-columns: 1fr 25%;
+        grid-template-areas: "article aside";
+        gap: 10px;
     }
-    
-.footer {
-        grid-area: footer;
 
-        border: 2px solid red;
-}
+        .section__article {
+            grid-area: article;
+
+            border: 2px solid red;
+        }
+        
+        .section__aside {
+            grid-area: aside;
+
+            border: 2px solid red;
+        }
+        
+    .footer {
+            grid-area: footer;
+
+            border: 2px solid red;
+    }
