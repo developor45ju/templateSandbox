@@ -8,10 +8,10 @@ html, body {
 }
 
 .loading-page {
+    display: flex;
+    align-self: center;
+    justify-self: center;
     position: absolute;
-    top: 40%;
-    left: 40%;
-    transform: translate(-50%, -50%);
     height: 250px;
     width: 250px;
     border: 3px solid black;
