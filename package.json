@@ -1,0 +1,22 @@
+{
+  "name": "templatesandbox",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/style.scss:./public/style.css --style=compressed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/developor45ju/templateSandbox.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/developor45ju/templateSandbox/issues"
+  },
+  "homepage": "https://github.com/developor45ju/templateSandbox#readme",
+  "devDependencies": {
+    "sass": "^1.56.0"
+  }
+}

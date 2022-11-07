@@ -1,0 +1,118 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+.loading-page {
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    position: absolute;
+    height: 250px;
+    width: 250px;
+    border: 3px solid black;
+    border-top-color: aqua;
+    border-right-color: red;
+    border-bottom-color: blue;
+    border-left-color: plum;
+    border-radius: 100%;
+    animation: spin 3s ease  forwards;
+}
+
+.loading-page ~ * {
+    opacity: 0;
+    animation: appear 3s 1s ease-in forwards;
+}
+
+
+
+body {
+    display: grid;
+    grid-template-columns: 1fr 25%;
+    grid-template-rows: 10em 1fr 5em;
+    grid-template-areas: "header header"
+                         "section section"
+                         "footer footer";
+    margin: 0;
+    gap: 10px;
+    padding: 10px;
+    animation: scroll-after__loading-page ease 3s 1s forwards;
+    overflow-y: hidden;
+    
+    .header {
+            grid-area: header;
+            
+            border: 2px solid red;
+        }
+
+    .section {
+        grid-area: section;
+
+        display: grid;
+        grid-template-columns: 1fr 25%;
+        grid-template-rows: auto 1fr;
+        grid-template-areas: "article aside";
+        gap: 10px;
+
+        h2 {
+            grid-column: 2 span;
+
+            text-align: center;
+        }
+
+        .section__article {
+            grid-area: article;
+            grid-row: 2;
+
+            border: 2px solid red;
+
+            h3 {
+                width: calc(100% / 3);
+                text-align: center;
+            }
+        }
+            
+        .section__aside {
+            grid-area: aside;
+            grid-row: 2;
+            
+            border: 2px solid red;
+        }
+    }
+            
+    .footer {
+        grid-area: footer;
+        
+        border: 2px solid red;
+    }
+}
+
+
+
+
+        
+@keyframes scroll-after__loading-page {
+    to {
+        overflow-y: scroll;
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(1turn);
+        opacity: 0;
+    }
+}
+
+@keyframes appear {
+    to {
+        opacity: 1;
+    }
+}
