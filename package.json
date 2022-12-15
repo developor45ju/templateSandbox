@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch ./sass/style.scss:./public/style.css --style=compressed"
+    "sass": "sass --watch ./sass/style.scss:./public/style.css --style=compressed",
+    "prefix": "postcss --watch ./public/style.css --use autoprefixer -d ./public"  
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,10 @@
   },
   "homepage": "https://github.com/developor45ju/templateSandbox#readme",
   "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.20",
+    "postcss-cli": "^10.1.0",
     "sass": "^1.56.0"
-  }
+  },
+  "browerslist": "last 4 version"
 }
